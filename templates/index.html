@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Car Price Predictor 🚖</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Website Title -->
+        <div class="container">
+            <h2 class='container-heading'><span class="heading_font">Car Price Predictor 🚖</span></h2>
+            <div class='description'>
+                <p>🚕...Find your car's correct worth</p>
+            </div>
+        </div>
+
+            <!-- Prediction Form -->
+            <div class='ml-container'>
+                <form action="{{ url_for('predict') }}" method="POST">
+
+                    <br><input class="form-input" type="text" name="Year" placeholder="Year (eg. 2018)" required="required"><br><br>
+                    <input class="form-input" type="text" name="Present_Price"  placeholder="Showroom Price in Lacs (eg. 7.2)" required="required"><br><br>
+                    <input class="form-input" type="text" name="Kms_Driven"  placeholder="Kms Drived (eg. 4000)"required="required"><br><br>
+                    <input class="form-input" type="text" name="Owner"  placeholder="No. of Previous Owners(0/1/3)"required="required"><br><br>
+
+                    <!-- Fuel Type Dropdown -->
+                    <select class="form-input align-center" name="Fuel_Type_Petrol" required="required">
+                        <option hidden disabled selected value> --- Select a Fuel Type --- </option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="CNG">CNG</option>
+                    </select><br><br>
+                    <!-- Seller Type Dropdown -->
+                    <select class="form-input align-center" name="Seller_Type_Individual" required="required">
+                        <option hidden disabled selected value> --- Are you A Dealer or An Individual --- </option>
+                        <option value="Dealer">Dealer</option>
+                        <option value="Individual">Individual</option>
+                    </select><br><br>
+
+                    <!-- Transmission Type Dropdown -->
+                    <select class="form-input align-center" name="Transmission_Mannual" required="required">
+                        <option hidden disabled selected value> --- Select a Transmission Type ---</option>
+                        <option value="Mannual">Manual Car</option>
+                        <option value="Automatic">Automatic Car</option>
+                    </select><br><br>
+
+                    
+            <input type="submit" class="my-cta-button" value="Predict Price">
+            </form>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/rudrajit1729/Car-Price-Prediction"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/rudrajit-choudhuri-bb83551b1/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Developed by Rudrajit Choudhuri 🦋</p>
+       </div>
+
+    </body>
+</html>
