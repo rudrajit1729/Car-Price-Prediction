@@ -63,6 +63,8 @@ body{
 	width: 350px;
 	height: 25px;
 	margin-bottom: 5px;
+	margin-border: 1px;
+	margin-style: groove;
 }
 
 /* Predict Button */
